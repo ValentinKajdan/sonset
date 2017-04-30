@@ -4,31 +4,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Home extends CI_Controller {
 
 	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
+	 * HOME Controller
 	 */
 	public function index()
 	{
 		// Loads
     $this->load->model('Home_model', 'home');
 
-		//Posts
+		//Get posts
 		$data['posts'] = $this->home->getPosts();
 
 		//Datas
-		$data['test'] = "test";
+		$data['title'] = "Sonset - Partage, découvre et regroupe tes sons préférés !";
+		$data['linkcss'] =	array( 'rel' => 'stylesheet', 'type' => 'text/css', 'href' => 'assets/css/style.css' );
+		$data['main_content'] = "home";
 
-		$this->load->view('welcome_message', $data);
+		$this->load->view('template', $data);
 	}
 }

@@ -15,6 +15,7 @@ class Home_model extends CI_Model
   function getPosts() {
     $this->db->select( '*' );
     $this->db->from('post');
+    $this->db->join('user', 'author = user.id' ,'inner');
 
     $get = $this->db->get();
     return $get->result();
