@@ -16,6 +16,7 @@ class Home_model extends CI_Model
     $this->db->select( '*' );
     $this->db->from('post');
     $this->db->join('user', 'author = user.id' ,'inner');
+    $this->db->order_by('date', 'DESC');
 
     $get = $this->db->get();
     return $get->result();
