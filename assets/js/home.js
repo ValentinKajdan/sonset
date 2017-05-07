@@ -20,4 +20,21 @@ $(function() {
     console.log("Vote négatif !");
   })
 
+  // open popup
+  $('.open-popup').on('click', function() {
+    popup = $(this).data('popup');
+    console.log('.popup .popup-'+popup);
+    $('.popup').css("display", "flex").hide().fadeIn();
+    $('.popup .popup-'+popup).css("display", "flex").hide().fadeIn();
+    $('.overlay').fadeIn();
+  });
+
+  //close popup
+  $('.closepopup').on('click', function() {
+    console.log("touch");
+    $('.overlay').fadeOut();
+    $('.popup').fadeOut();
+    $('.popup .pop').fadeOut();
+  });
+
 });

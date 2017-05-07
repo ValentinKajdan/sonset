@@ -22,11 +22,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="main_header__top">
 	    <div class="main_header__top--logo">
 	      SONSET
+					<?php var_dump($username); ?>
 	    </div>
 	    <div class="main_header__top--right">
 	      <ul class="">
-	        <li><a href="<?php echo base_url(); ?>">Connexion</a></li>
-	        <li><a href="<?php echo base_url(); ?>">Inscription</a></li>
+	        <li><span class="open-popup" data-popup="login">Connexion</span></li>
+	        <li><span class="open-popup" data-popup="signup">Inscription</span></li>
 	      </ul>
 	    </div>
 		</div>

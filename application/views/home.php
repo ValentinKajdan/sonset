@@ -32,7 +32,10 @@
     $picLink = "https://i.ytimg.com/vi/".$post->refVideo."/hqdefault.jpg"?>
 
     <a href="<?php echo base_url(); ?>" class="card">
-      <div class="card__pic" style="background-image: url('<?php echo $picLink; ?>');"></div>
+      <div class="card__pic" style="background-image: url('<?php echo $picLink; ?>');">
+        <span class="card--icon vote-pos"><i class="fa fa-plus-circle fa-lg"></i></span>
+        <span class="card--icon vote-neg"><i class="fa fa-minus-circle fa-lg"></i></span>
+      </div>
       <div class="card__description">
         <div class="card__description--title" title="<?= $post->title ?>">
           <?= $post->title ?>
@@ -43,9 +46,7 @@
       </div>
       <div class="card__bottom">
         <div class="card__bottom--icons">
-          <span class="card__bottom--icon vote-pos"><i class="fa fa-plus-circle fa-lg"></i></span>
-          <span class="card__bottom--icon vote-neg"><i class="fa fa-minus-circle fa-lg"></i></span>
-          <span class="card__bottom--icon yt-link" data-link="<?= $post->linkVideo ?>"><i class="fa fa-external-link fa-lg"></i></span>
+          <span class="card--icon-yt-link" data-link="<?= $post->linkVideo ?>"><i class="fa fa-external-link fa-lg"></i></span>
         </div>
         <div class="card__bottom--tags">
           <?php foreach ($post->tags as $tag) { ?>

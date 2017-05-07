@@ -19,6 +19,18 @@ class Home extends CI_Controller {
 			$post->tags = $this->home->getTags($post->post_id);
 		}
 
+		//Check Connection
+		if($this->session->userdata('logged_in'))
+	   {
+	     $session_data = $this->session->userdata('logged_in');
+	     $data['username'] = $session_data['username'];
+	   }
+	   else
+	   {
+	     //If no session, redirect to login page
+			 $data['username'] = false;
+	   }
+
 		//Datas
 		$data['title'] = "Sonset - Partage, découvre et regroupe tes sons préférés !";
 		$data['linkcss'] =	array( 'rel' => 'stylesheet', 'type' => 'text/css', 'href' => 'assets/css/style.css' );

@@ -7,13 +7,12 @@ class Home_model extends CI_Model
   {
     /* Loads */
     $this->load->helper ('text');
-    $this->load->helper('url');
 
     $this->db = $this->load->database('sonset', true);
   }
 
   function getPosts() {
-    $this->db->select( 'posts.id as post_id, title, linkVideo, desc, author, date, refVideo, users.name as username' );
+    $this->db->select( 'posts.id as post_id, title, linkVideo, desc, author, date, refVideo, users.username as username' );
     $this->db->from('posts');
     $this->db->join('users', 'author = users.id' ,'inner');
     $this->db->order_by('date', 'DESC');
