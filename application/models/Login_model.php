@@ -16,7 +16,8 @@ class Login_model extends CI_Model
     $this->db->select('id, username, password, mail');
     $this->db->from('users');
     $this->db->where('mail', $mail);
-    $this->db->where('password', MD5($password));
+    // $this->db->where('password', MD5($password));
+    $this->db->where('password', $password);
     $this->db->limit(1);
 
     $query = $this->db->get();
